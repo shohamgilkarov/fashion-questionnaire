@@ -1,5 +1,4 @@
 {
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "dist",
-  "rootDirectory": "fashion-questionnaire"
+  "buildCommand": "cd fashion-questionnaire && npm install && npm run build",
+  "outputDirectory": "fashion-questionnaire/dist"
 }
