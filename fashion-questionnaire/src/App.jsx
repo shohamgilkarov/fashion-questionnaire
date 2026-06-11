@@ -484,7 +484,7 @@ export default function App() {
         "gu3MOqMfp1tFkuCu7"
       );
     } catch (e) {
-      setError("שגיאת רשת, נסי שוב.");
+      setError("שגיאה: " + (e?.text || e?.message || JSON.stringify(e)));
       setSubmitting(false);
       return;
     }
