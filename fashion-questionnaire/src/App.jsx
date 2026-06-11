@@ -408,8 +408,8 @@ function QuestionField({ q, value, onChange }) {
             >
               <div style={{
                 width: 18, height: 18, borderRadius: "50%",
-                border: `2px solid ${checked ? ROSE : "#d4c4a8"}`,
-                background: checked ? ROSE : "#fff",
+                border: `2px solid ${checked ? PURPLE : "#d4c4a8"}`,
+                background: checked ? PURPLE : "#fff",
                 display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
                 {checked && <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#fff" }} />}
@@ -438,8 +438,8 @@ function QuestionField({ q, value, onChange }) {
             >
               <div style={{
                 width: 18, height: 18, borderRadius: 4,
-                border: `2px solid ${checked ? ROSE : "#d4c4a8"}`,
-                background: checked ? ROSE : "#fff",
+                border: `2px solid ${checked ? PURPLE : "#d4c4a8"}`,
+                background: checked ? PURPLE : "#fff",
                 display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
                 {checked && (
@@ -539,7 +539,7 @@ export default function App() {
         <br /><br />
         ככל שתהיי ספציפית יותר – כך התוצאות יהיו קרובות יותר לחלום 🤍
         <br /><br />
-        <em style={{ color: ROSE }}>מחכה לשמוע, שוהם 💜</em>
+        <em style={{ color: PURPLE }}>מחכה לשמוע, שוהם 💜</em>
       </div>
 
       {SECTIONS.map((sec) => (
