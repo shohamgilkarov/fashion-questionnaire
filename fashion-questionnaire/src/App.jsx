@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const SECTIONS = [
   {
@@ -473,26 +474,15 @@ export default function App() {
     setError("");
     setSubmitting(true);
     try {
-      const payload = {
-        _subject: `שאלון הכנה להפקה – ${name}`,
-        email: email,
-        name: name,
-        ...Object.fromEntries(
-          Object.entries(answers).map(([k, v]) => [k, Array.isArray(v) ? v.join(", ") : String(v || "")])
-        ),
-        _submitted: new Date().toLocaleString("he-IL"),
-      };
-      const res = await fetch("https://formspree.io/f/xpqejvyq", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setError("שגיאה בשליחה: " + (data?.error || "נסי שוב"));
-        setSubmitting(false);
-        return;
-      }
+      const message = Object.entries(answers)
+        .map(([k, v]) => `${k}: ${Array.isArray(v) ? v.join(", ") : String(v || "")}`)
+        .join("\n");
+      await emailjs.send(
+        "service_o1kaq4u",
+        "template_5bxldhc",
+        { name, email, message },
+        "gu3MOqMfp1tFkuCu7"
+      );
     } catch (e) {
       setError("שגיאת רשת, נסי שוב.");
       setSubmitting(false);
