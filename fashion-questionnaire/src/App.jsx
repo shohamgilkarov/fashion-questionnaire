@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 const SECTIONS = [
   {
     id: "personal",
@@ -9,7 +8,7 @@ const SECTIONS = [
       { id: "name", label: "שם מלא", type: "text", required: true },
       { id: "phone", label: "מספר טלפון", type: "tel", required: true },
       { id: "email", label: "אימייל", type: "email", required: true },
-      { id: "brand", label: "שם המותג / הפרויקט", type: "text", required: false },
+      { id: "brand", label: "שם הסלון / המותג", type: "text", required: false },
     ],
   },
   {
@@ -53,7 +52,7 @@ const SECTIONS = [
         id: "q4",
         label: "4. מהי הפלטה הצבעונית של הקמפיין?",
         type: "textarea",
-        placeholder: "לדוגמה: לבן שנהב עם זהב, או ורוד רך עם עמוד ושמנת...",
+        placeholder: "לדוגמה: לבן שנהב עם זהב, ורוד רך עם עמוד ושמנת...",
         required: true,
       },
       {
@@ -65,7 +64,6 @@ const SECTIONS = [
           "דרמטי ואפל",
           "רומנטי ורך",
           "אורבני ועירוני",
-          "ספורטיבי ודינמי",
           "פנטזיה / סוריאליסטי",
           "וינטג׳ / רטרו",
           "טבעי / בוהו",
@@ -75,14 +73,14 @@ const SECTIONS = [
       },
       {
         id: "q6",
-        label: "6. האם יש מותגים או קמפיינים שמעוררים בך השראה?",
+        label: "6. האם יש קמפיינים שמעוררים בך השראה?",
         type: "textarea",
-        placeholder: "שמות מותגים, קישורים לתמונות, או תיאור של סגנון שאהבת...",
+        placeholder: "שמות מותגים, קישורים, תיאור סגנון שאהבת...",
         required: false,
       },
       {
         id: "q7",
-        label: "7. מה את רוצה שיהיה ברקע / בסביבה של התמונות?",
+        label: "7. מה את רוצה שיהיה ברקע של התמונות?",
         type: "checkbox",
         options: [
           "סטודיו נקי / רקע חלק",
@@ -156,7 +154,6 @@ const SECTIONS = [
           "אתר / חנות אונליין",
           "קטלוג / לוק בוק",
           "פרסום מודפס",
-          "לינקדאין",
         ],
         required: false,
       },
@@ -188,7 +185,7 @@ const SECTIONS = [
   },
   {
     id: "logistics",
-    title: "חלק ה׳ – לוגיסטיקה ותקציב",
+    title: "חלק ה׳ – לוגיסטיקה",
     questions: [
       {
         id: "q14",
@@ -206,20 +203,19 @@ const SECTIONS = [
         id: "q15",
         label: "15. האם יש אלמנטים שחשוב לך שלא יופיעו בקמפיין?",
         type: "textarea",
-        placeholder: "לדוגמה: לא רוצה רקעים כהים, לא אלמנטים דתיים, לא מראה מסוים...",
+        placeholder: "לדוגמה: לא רוצה רקעים כהים, לא אלמנטים מסוימים...",
         required: false,
       },
       {
         id: "q16",
-        label: "16. האם יש משהו נוסף שחשוב לי לדעת לפני שנתחיל?",
+        label: "16. משהו נוסף שחשוב לי לדעת לפני שנתחיל?",
         type: "textarea",
-        placeholder: "כל פרט, בקשה מיוחדת, השראה שלא הזכרת, או שאלה שיש לך...",
+        placeholder: "כל פרט, בקשה מיוחדת, שאלה...",
         required: false,
       },
     ],
   },
 ];
-
 const PURPLE = "#7c3aed";
 const PURPLE_LIGHT = "#f5f3ff";
 const PURPLE_MID = "#ede9fe";
@@ -409,7 +405,7 @@ function QuestionField({ q, value, onChange }) {
             >
               <div style={{
                 width: 18, height: 18, borderRadius: "50%",
-                border: `2px solid ${checked ? PURPLE : "#d4c4a8"}`,
+                border: `2px solid ${checked ? PURPLE : "#c4b5fd"}`,
                 background: checked ? PURPLE : "#fff",
                 display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
@@ -439,7 +435,7 @@ function QuestionField({ q, value, onChange }) {
             >
               <div style={{
                 width: 18, height: 18, borderRadius: 4,
-                border: `2px solid ${checked ? PURPLE : "#d4c4a8"}`,
+                border: `2px solid ${checked ? PURPLE : "#c4b5fd"}`,
                 background: checked ? PURPLE : "#fff",
                 display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
@@ -510,12 +506,9 @@ export default function App() {
     return (
       <div style={styles.page}>
         <div style={styles.successBox}>
-          <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>✨</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", color: PURPLE, fontWeight: 700, marginBottom: "0.5rem", fontSize: "1.5rem" }}>
-            תודה רבה!
-          </h2>
-          <div style={{ width: 32, height: 1, background: PURPLE, margin: "0.75rem auto 1rem", opacity: 0.7 }} />
-          <p style={{ color: "#666", lineHeight: 1.8, margin: 0, fontSize: "0.97rem" }}>
+          <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>💜</div>
+          <h2 style={{ color: PURPLE, fontWeight: 700, marginBottom: "0.5rem" }}>תודה רבה!</h2>
+          <p style={{ color: "#6b7280", lineHeight: 1.7, margin: 0 }}>
             הפרטים שלך נשלחו בהצלחה. אני אעבור על השאלון ואחזור אלייך עם תוכנית מפורטת להפקה שלנו ✨
           </p>
         </div>
@@ -532,7 +525,7 @@ export default function App() {
       </div>
 
       <div style={styles.intro}>
-        <strong style={{ color: PURPLE }}>היי יקירה 💜</strong>
+        <strong>היי יקירה 💜</strong>
         <br /><br />
         שמחה שבחרת בי להפקת הקמפיין שלך 💜
         <br /><br />
@@ -540,7 +533,7 @@ export default function App() {
         <br /><br />
         ככל שתהיי ספציפית יותר – כך התוצאות יהיו קרובות יותר לחלום 🤍
         <br /><br />
-        <em style={{ color: PURPLE }}>מחכה לשמוע, שוהם 💜</em>
+        <em>מחכה לשמוע, שוהם 💜</em>
       </div>
 
       {SECTIONS.map((sec) => (
@@ -559,7 +552,7 @@ export default function App() {
       ))}
 
       {error && (
-        <p style={{ textAlign: "center", color: "#c0392b", marginTop: "1rem", fontWeight: 500 }}>
+        <p style={{ textAlign: "center", color: "#dc2626", marginTop: "1rem", fontWeight: 500 }}>
           {error}
         </p>
       )}
